@@ -1,3 +1,1 @@
-git+https://github.com/python-telegram-bot/python-telegram-bot==13.8.1
-json
-requests
+git+https://github.com/python-telegram-bot/python-telegram-bot
