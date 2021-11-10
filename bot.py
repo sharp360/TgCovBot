@@ -5,11 +5,13 @@ import json
 import os
 
 
-def start(update: Update, context: CallbackContext) -> None:
+def start(update: Update) -> None:
     update.message.reply_text(f'Здарова ебать')
 
-def cases(update: Update, context: CallbackContext) -> None:
-    response = requests.api.get('https://api.apify.com/v2/key-value-stores/3Po6TV7wTht4vIEid/records/LATEST?disableRedirect=true').content
+
+def cases(update: Update) -> None:
+    response = requests.api.get('https://api.apify.com/v2/key-value-stores/3Po6TV7wTht4vIEid/records/LATEST'
+                                '?disableRedirect=true').content
     response = json.loads(response)
     daily_infected = response['dailyInfected']
     txtdate = response['txtDate']
