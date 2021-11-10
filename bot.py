@@ -2,6 +2,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 import requests
 import json
+import os
 
 
 def start(update: Update, context: CallbackContext) -> None:
@@ -15,7 +16,7 @@ def cases(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f'New cases from {txtdate} are 🎉{daily_infected}🎉')
 
 
-updater = Updater('TOKEN')
+updater = Updater(os.environ['TOKEN'])
 
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('cases', cases))
