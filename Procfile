@@ -1,1 +1,1 @@
-worker: php index.php
+worker: python bot.py
