@@ -9,7 +9,7 @@ def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text(f'Здарова ебать')
 
 def cases(update: Update, context: CallbackContext) -> None:
-    response = requests.api.get('https://api.jsonbin.io/b/618bdb62820eda3cc81b05e7/3').content
+    response = requests.api.get('https://api.apify.com/v2/key-value-stores/3Po6TV7wTht4vIEid/records/LATEST?disableRedirect=true').content
     response = json.loads(response)
     daily_infected = response['dailyInfected']
     daily_deceased = response['dailyDeceased']
